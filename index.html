@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/Weather-Partly-Cloudy-Rain-icon.png" type="image">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/weather-icons-wind.min.css">
+    <link rel="stylesheet" href="css/weather-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <!-- As a heading -->
+        <nav class="navbar position-sticky shadow p-3 mb-5  rounded mobil-nav">
+            <span class="navbar-brand mb-0 h1">Weather Forecast</span>
+            <div class="input-group-append" id="search-bar">
+                <input type="text" class="form-control" id="search-input-bar" placeholder="Search Cities Weather" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2">
+                <span class="fas fa-search" id="search-icon" onclick="app.getWeather()"></span>
+            </div>
+
+            <div id="myNav" class="overlay shadow rounded mobil-nav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeBar()">&times;</a>
+                <div class="input-group-append" id="mobile-search-bar">
+                    <input type="text" class="form-control" id="moblie-search-input" placeholder="Search Cities Weather" aria-label="Recipient's username"
+                        aria-describedby="basic-addon2">
+                    <span class="fas fa-search" id="mobile-search-icon" onclick="showMoblieData()"></span>
+                </div>
+            </div>
+            <i class="fas fa-search" id="mobile-icon" onclick="openSearchBar()"></i>
+        </nav>
+        <!-- weather-details -->
+        <main>
+            <div class="icon">
+                <i class=""></i>
+            </div>
+
+            <div class="city-info info">
+                <h3 class="city">
+                   
+                </h3>
+                <div id="current-date-month">
+                    <h5 class="current-month"></h5>
+                    <span class="current-date"></span>
+                </div>
+            </div>
+
+            <div class="weather-info info">
+                <div class="temp-detail">
+                    <h1 class="temp">
+                       
+                    </h1>
+                    <i class="wi wi-degrees"></i>
+                </div>
+                <div class="Cloud">
+                    <p class="weather">
+                       
+                    </p>
+                </div>
+            </div>
+
+            <div class="weather-current-details info">
+                <p class="visibility">
+                   
+                </p>
+                <p class="humidity">
+                   
+                </p>
+            </div>
+
+            <div class="weather-current-details last-box info">
+                <p class="wind">
+                </p>
+                <p class="wind-direction">
+                </p>
+            </div>
+        </main>
+
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+
+                <div class="swiper-slide">
+                    <h4 class="card-day1">
+                       
+                    </h4>
+                    <h4 class="forecast-icon1"></h4>
+                    <diV class="temp-div">
+                        <h5 class="card-temp1">
+                            
+                        </h5>
+                    </diV>
+
+                </div>
+                <div class="swiper-slide">
+                    <h4 class="card-day2">
+                       
+                    </h4>
+                    <h4 class="forecast-icon2"></h4>
+                    <diV class="temp-div">
+                        <h5 class="card-temp2">
+                         
+                        </h5>
+                    </diV>
+
+                </div>
+                <div class="swiper-slide">
+                    <h4 class="card-day3">
+                        
+                    </h4>
+                    <h4 class="forecast-icon3"></h4>
+                    <diV class="card-icon">
+                        <h5 class="card-temp3">
+                            
+                        </h5>
+                    </diV>
+
+                </div>
+                <div class="swiper-slide">
+                    <h4 class="card-day4">
+                       
+                    </h4>
+                    <h4 class="forecast-icon4"></h4>
+                    <diV class="card-icon">
+                        <h5 class="card-temp4">
+                           
+                        </h5>
+                    </diV>
+
+                </div>
+                <div class="swiper-slide">
+                    <h4 class="card-day5">
+                        
+                    </h4>
+                    <h4 class="forecast-icon5"></h4>
+                    <diV class="card-icon">
+                        <h5 class="card-temp5">
+                            
+                        </h5>
+                    </diV>
+
+                </div>
+            </div>
+            
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/app.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.esm.bundle.js"></script> -->
+</body>
+
+</html>
+
